@@ -19,6 +19,16 @@ body {
     text-decoration: none;
   }
 }
+/* footer */
+footer {
+  margin: 120px 0;
+  height: 3px;
+  border-top: 1px #000000 solid;
+  .copyright {
+  float: right;
+  bottom: 0;
+  }
+}
 /* home.html */
 .bodycenter {
   display: flex;
