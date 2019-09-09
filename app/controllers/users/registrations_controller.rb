@@ -55,7 +55,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # 新規登録後のリダイレクト先の指定
     def after_sign_up_path_for(resource)
-      my_page_path(resource)
+      my_page_path
     end
 
   # The path used after sign up for inactive accounts.
