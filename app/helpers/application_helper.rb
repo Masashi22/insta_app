@@ -1,6 +1,6 @@
 module ApplicationHelper
-  #タイトルを返す
-  def full_title(page_title = '')
+  # タイトルを返す
+  def full_title(page_title)
     base_title = 'Instagram'
     if page_title.empty?
       base_title
