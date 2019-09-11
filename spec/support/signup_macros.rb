@@ -1,9 +1,10 @@
 module SignupMacros
-  def sign_up_with(email, password, confirmation)
+  def sign_up_with(username, email, password, confirmation)
     visit new_user_registration_path
-    fill_in "Email", with: email
-    fill_in "Password", with: password
-    fill_in "Password confirmation", with: confirmation
-    click_button "Sign up"
+    fill_in "名前", with: username
+    fill_in "メールアドレス", with: email
+    fill_in "パスワード", with: password
+    fill_in "確認用パスワード", with: confirmation
+    click_button "登録する"
   end
 end
