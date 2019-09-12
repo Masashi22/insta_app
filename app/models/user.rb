@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic
   validates :username, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
