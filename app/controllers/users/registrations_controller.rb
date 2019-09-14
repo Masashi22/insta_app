@@ -58,6 +58,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     my_page_path
   end
 
+  #編集後のリダイレクト先
+  def after_update_path_for(resource)
+    my_page_path
+  end
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
