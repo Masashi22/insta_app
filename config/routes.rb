@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get 'my_page', :to => 'users/registrations#my_page'
   end
 
-  resources :users, :only => [:index]
+  resources :users, :only => [:index, :show]
   root 'static_pages#home'
 end
