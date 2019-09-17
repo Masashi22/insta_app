@@ -20,7 +20,7 @@ RSpec.feature "Log in", :devise do
     expect(current_path).to eq my_page_path
     logout
     expect(current_path).to eq root_path
-    @different_email = build(:user, email:"aaaa")
+    @different_email = build(:user, email: "aaaa")
     login(@different_email)
     expect(current_path).to eq new_user_session_path
   end
@@ -30,7 +30,7 @@ RSpec.feature "Log in", :devise do
     expect(current_path).to eq my_page_path
     logout
     expect(current_path).to eq root_path
-    @different_password = build(:user, password:"aaa")
+    @different_password = build(:user, password: "aaa")
     login(@different_password)
     expect(current_path).to eq new_user_session_path
   end

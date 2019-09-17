@@ -11,7 +11,7 @@ RSpec.feature "Sign Up", :devise do
   end
 
   scenario "sign up fail because email is invalid" do
-    @different_email = build(:user, email:"aaaa")
+    @different_email = build(:user, email: "aaaa")
     sign_up_with(@different_email)
     expect(current_path).to eq user_registration_path
   end

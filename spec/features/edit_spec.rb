@@ -48,7 +48,6 @@ RSpec.feature "edit" do
     fill_in "名前", with: " "
     fill_in "現在のパスワード", with: @user.password
     click_button "更新する"
-    expect(current_path).to eq my_page_path
-    expect(@user.username).to eq @user.username
+    expect(current_path).to eq user_registration_path
   end
 end
