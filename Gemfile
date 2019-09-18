@@ -19,6 +19,7 @@ gem 'faker'
 gem 'kaminari'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'config'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
