@@ -43,6 +43,8 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'capybara-email'
+  gem 'email_spec'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end

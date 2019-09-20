@@ -6,5 +6,7 @@ module SignupMacros
     fill_in "パスワード", with: user.password
     fill_in "確認用パスワード", with: user.password
     click_button "登録する"
+    open_email(user.email)
+    current_email.click_link 'Confirm my account'
   end
 end
