@@ -72,6 +72,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    capybara-email (3.0.1)
+      capybara (>= 2.4, < 4.0)
+      mail
     childprocess (2.0.0)
       rake (< 13.0)
     chromedriver-helper (2.1.1)
@@ -86,7 +89,12 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
+    config (2.0.0)
+      activesupport (>= 4.2)
+      deep_merge (~> 1.2, >= 1.2.1)
+      dry-schema (~> 1.0)
     crass (1.0.4)
+    deep_merge (1.2.1)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -97,6 +105,40 @@ GEM
       devise (>= 4.6)
     devise-i18n-views (0.3.7)
     diff-lcs (1.3)
+    dry-configurable (0.8.3)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4, >= 0.4.7)
+    dry-container (0.7.2)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1, >= 0.1.3)
+    dry-core (0.4.9)
+      concurrent-ruby (~> 1.0)
+    dry-equalizer (0.2.2)
+    dry-inflector (0.1.2)
+    dry-initializer (3.0.1)
+    dry-logic (1.0.3)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.2)
+      dry-equalizer (~> 0.2)
+    dry-schema (1.3.4)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.8, >= 0.8.3)
+      dry-core (~> 0.4)
+      dry-equalizer (~> 0.2)
+      dry-initializer (~> 3.0)
+      dry-logic (~> 1.0)
+      dry-types (~> 1.0)
+    dry-types (1.1.1)
+      concurrent-ruby (~> 1.0)
+      dry-container (~> 0.3)
+      dry-core (~> 0.4, >= 0.4.4)
+      dry-equalizer (~> 0.2, >= 0.2.2)
+      dry-inflector (~> 0.1, >= 0.1.2)
+      dry-logic (~> 1.0, >= 1.0.2)
+    email_spec (2.2.0)
+      htmlentities (~> 4.3.3)
+      launchy (~> 2.1)
+      mail (~> 2.7)
     erubi (1.8.0)
     execjs (2.7.0)
     factory_bot (5.0.2)
@@ -113,6 +155,7 @@ GEM
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
+    htmlentities (4.3.4)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -137,6 +180,8 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -338,11 +383,14 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (>= 2.15)
+  capybara-email
   chromedriver-helper
   coffee-rails (~> 4.2)
+  config
   devise
   devise-i18n
   devise-i18n-views
+  email_spec
   factory_bot_rails
   faker
   gravtastic

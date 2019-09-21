@@ -19,6 +19,7 @@ gem 'faker'
 gem 'kaminari'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'config'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -42,6 +43,8 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'capybara-email'
+  gem 'email_spec'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end

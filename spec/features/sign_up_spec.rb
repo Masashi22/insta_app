@@ -7,12 +7,17 @@ RSpec.feature "Sign Up", :devise do
 
   scenario "sign up successfully" do
     sign_up_with(@user)
-    expect(current_path).to eq my_page_path
+    expect(current_path).to eq new_user_session_path
   end
 
   scenario "sign up fail because email is invalid" do
     @different_email = build(:user, email: "aaaa")
-    sign_up_with(@different_email)
+    visit new_user_registration_path
+    fill_in "名前", with: @different_email.username
+    fill_in "メールアドレス", with: @different_email.email
+    fill_in "パスワード", with: @different_email.password
+    fill_in "確認用パスワード", with: @different_email.password
+    click_button "登録する"
     expect(current_path).to eq user_registration_path
   end
 
@@ -28,7 +33,12 @@ RSpec.feature "Sign Up", :devise do
 
   scenario 'sign up fail because username is nil' do
     @no_username = build(:user, username: " ")
-    sign_up_with(@no_username)
+    visit new_user_registration_path
+    fill_in "名前", with: @no_username.username
+    fill_in "メールアドレス", with: @no_username.email
+    fill_in "パスワード", with: @no_username.password
+    fill_in "確認用パスワード", with: @no_username.password
+    click_button "登録する"
     expect(current_path).to eq user_registration_path
   end
 end
