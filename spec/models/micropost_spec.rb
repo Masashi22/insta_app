@@ -29,4 +29,13 @@ RSpec.describe Micropost, type: :model do
       expect(user.microposts).to eq [new_post, old_post]
     end
   end
+
+  describe "micropost destroy bue to user is destroy" do
+    let!(:user) { create(:user) }
+
+    it "is successfully" do
+      micropost = user.microposts.create(content: "aaaa")
+      expect{ user.destroy }.to change{ Micropost.count }.by(-1)
+    end
+  end
 end

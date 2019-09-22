@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :microposts
+  has_many :microposts, dependent: :destroy
   include Gravtastic
   gravtastic
   validates :username, presence: true
