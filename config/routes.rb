@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, :only => [:index, :show]
+  resources :microposts, :only => [:new, :create, :destroy]
   root 'static_pages#home'
 end
