@@ -3,10 +3,10 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "投稿しました！"
-      redirect_to my_page_path
+      redirect_to user_path(id: current_user.id)
     else
       flash.now[:alert] = "投稿できませんでした"
-      render 'registrations/my_page'
+      render "static_pages/home"
     end
   end
 

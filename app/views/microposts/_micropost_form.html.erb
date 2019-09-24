@@ -1,6 +1,6 @@
 <%= form_for(@micropost) do |f| %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "投稿する？" %>
+    <%= f.text_area :content, placeholder: "投稿する？", id: "textarea1" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

@@ -11,7 +11,7 @@ RSpec.feature "edit" do
     fill_in "名前", with: "aaa"
     fill_in "現在のパスワード", with: @user.password
     click_button "更新する"
-    expect(current_path).to eq my_page_path
+    expect(current_path).to eq user_path(id: @user.id)
   end
 
   scenario "edit email successfully" do
@@ -20,7 +20,7 @@ RSpec.feature "edit" do
     fill_in "メールアドレス", with: "aaa@example.com"
     fill_in "現在のパスワード", with: @user.password
     click_button "更新する"
-    expect(current_path).to eq my_page_path
+    expect(current_path).to eq user_path(id: @user.id)
   end
 
   scenario "edit password successfully" do
@@ -30,7 +30,7 @@ RSpec.feature "edit" do
     fill_in "確認用パスワード", with: "aaaaaa"
     fill_in "現在のパスワード", with: @user.password
     click_button "更新する"
-    expect(current_path).to eq my_page_path
+    expect(current_path).to eq user_path(id: @user.id)
   end
 
   scenario "failure because not current_password" do
