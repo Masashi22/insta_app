@@ -1,4 +1,5 @@
 class MicropostsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
@@ -11,6 +12,15 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
+    @micropost =
+    Micropost.find(params[:id])
+    if @micropost
+    @micropost.destroy
+    flash[:success] = "削除しました。"
+    redirect_to request.referrer || root_url
+  else
+    redirect_to root_url
+  end
   end
 
   private
