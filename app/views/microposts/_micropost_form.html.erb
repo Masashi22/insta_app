@@ -3,4 +3,7 @@
     <%= f.text_area :content, placeholder: "投稿する？", id: "textarea1" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
+  <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
 <% end %>
