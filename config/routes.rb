@@ -5,10 +5,7 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions',
   }
 
-  devise_scope :user do
-    get 'my_page', :to => 'users/registrations#my_page'
-  end
-
   resources :users, :only => [:index, :show]
+  resources :microposts, :only => [:new, :create, :destroy, :show]
   root 'static_pages#home'
 end

@@ -22,7 +22,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # ログイン後のリダイレクト先の指定
   def after_sign_in_path_for(resource)
-    my_page_path
+    user_path(id: current_user.id)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

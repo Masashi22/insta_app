@@ -55,12 +55,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # 新規登録後のリダイレクト先の指定
   def after_sign_up_path_for(resource)
-    my_page_path
+    user_path(id: current_user.id)
   end
 
   # 編集後のリダイレクト先
   def after_update_path_for(resource)
-    my_page_path
+    user_path(id: current_user.id)
   end
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

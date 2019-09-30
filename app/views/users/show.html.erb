@@ -6,6 +6,17 @@
         <%= image_tag @user.gravatar_url %>
         <%= @user.username %>
       </h1>
+      <p><%= link_to "編集", edit_user_registration_path %></p>
     </section>
+    <%= render 'microposts/micropost_form' %>
   </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts(<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render partial: 'microposts/micropost', collection: @microposts  %>
+      </ol>
+      <%= paginate @microposts %>
+    <% end %>
+  </div>
 </div>
