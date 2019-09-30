@@ -35,7 +35,7 @@ RSpec.describe Micropost, type: :model do
 
     it "is successfully" do
       user.microposts.create(content: "aaaa")
-      expect { user.destroy }.to change(Micropost, :count).by(-1)
+      expect { user.destroy }.to change { Micropost.count }.by(-1)
     end
   end
 end

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   }
 
   resources :users, :only => [:index, :show]
-  resources :microposts, :only => [:new, :create, :destroy]
+  resources :microposts, :only => [:new, :create, :destroy, :show]
   root 'static_pages#home'
 end

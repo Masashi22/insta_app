@@ -9,10 +9,12 @@ RSpec.feature "micropost", :devise do
     login(@user)
     expect(current_path).to eq user_path(@user)
     fill_in "textarea1", with: "sample text"
+    page.attach_file("app/assets/images/sample.png") do
+      page.find('#picture_sub').click
+    end
     expect { click_on "Post" }.to change { Micropost.count }.by(1)
-    expect(page).to have_content('sample text')
-    
     expect(current_path).to eq user_path(@user)
+    click_on "main_image"
     expect { click_on "delete" }.to change { Micropost.count }.by(-1)
   end
 

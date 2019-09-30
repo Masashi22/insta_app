@@ -12,15 +12,18 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    @micropost =
-    Micropost.find(params[:id])
+    @micropost = Micropost.find_by(id: params[:id])
     if @micropost
-    @micropost.destroy
-    flash[:success] = "削除しました。"
-    redirect_to request.referrer || root_url
-  else
-    redirect_to root_url
+      @micropost.destroy
+      flash[:success] = "削除しました。"
+      redirect_to root_url
+    else
+      redirect_to root_url
+    end
   end
+
+  def show
+    @micropost = Micropost.find_by(id: params[:id])
   end
 
   private
