@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions',
   }
 
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show] do
+    member do
+      get :following, :followers
+    end
+  end
   resources :microposts, :only => [:new, :create, :destroy, :show]
   root 'static_pages#home'
 end

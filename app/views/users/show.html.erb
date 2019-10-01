@@ -8,6 +8,9 @@
       </h1>
       <p><%= link_to "編集", edit_user_registration_path %></p>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
     <%= render 'microposts/micropost_form' %>
   </aside>
   <div class="col-md-8">
