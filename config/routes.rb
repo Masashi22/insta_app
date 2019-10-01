@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
   resources :microposts, :only => [:new, :create, :destroy, :show]
+  resources :relationships, :only => [:create, :destroy]
   root 'static_pages#home'
 end
