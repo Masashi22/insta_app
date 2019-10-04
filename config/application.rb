@@ -24,5 +24,6 @@ module InstaApp
     end
 
     config.i18n.default_locale = :ja
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
