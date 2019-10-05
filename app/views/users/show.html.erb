@@ -14,12 +14,14 @@
     </section>
     <%= render 'microposts/micropost_form' %>
   </aside>
-  <div class="col-md-8">
+  <div class="main-content">
     <% if @user.microposts.any? %>
       <h3>Microposts(<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render partial: 'microposts/micropost', collection: @microposts  %>
-      </ol>
+      <div class="micropost-pictures">
+        <div class="micropost-picture">
+          <%= render partial: 'microposts/micropost', collection: @microposts  %>
+        </div>
+      </div>
       <%= paginate @microposts %>
     <% end %>
   </div>
