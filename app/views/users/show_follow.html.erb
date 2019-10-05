@@ -1,0 +1,21 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <asside class="col-md-4">
+    <section>
+      <h1>
+        <%= link_to image_tag(@user.gravatar_url), @user %>
+      </h1>
+      <span><b>投稿：</b><%= @user.microposts.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to image_tag(user.gravatar_url), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </asside>
+</div>

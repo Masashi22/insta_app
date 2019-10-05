@@ -80,6 +80,20 @@ aside {
 .gravar_edit {
   margin-top: 15px;
 }
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  .f-count {
+    padding: 0 10px;
+    border-left: 1px solid rgb(60, 76, 82);
+    color: gray;
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+}
 /* registration/new.html.erb */
 .form-for {
   text-align: center;
@@ -125,7 +139,6 @@ aside {
     margin-top: 5px;
   }
 }
-
 aside {
   textarea {
     height: 100px;
