@@ -26,6 +26,10 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.find_by(id: params[:id])
   end
 
+  def index
+    @microposts = Micropost.all
+  end
+
   private
 
   def micropost_params
