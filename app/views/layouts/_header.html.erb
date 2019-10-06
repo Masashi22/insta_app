@@ -8,13 +8,13 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user.nil? %>
-        <li><%= link_to "log in", new_user_session_path %></li>
-        <li><%= link_to "sign up", new_user_registration_path %></li>
+          <li><%= link_to "log in", new_user_session_path %></li>
+          <li><%= link_to "sign up", new_user_registration_path %></li>
         <% else %>
-        <li><%= link_to "My page", user_path(id: current_user.id) %></li>
-        <li><%= link_to "ユーザー一覧", users_path %></li>
-        <li><%= link_to "投稿一覧", microposts_path %></li>
-        <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "My page", user_path(id: current_user.id) %></li>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
+          <li><%= link_to "投稿一覧", microposts_path %></li>
+          <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
     </nav>
